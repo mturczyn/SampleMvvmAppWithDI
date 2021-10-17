@@ -20,7 +20,6 @@ namespace SampleMvvmAppWithDI
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Dispatcher_UnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
-        
         {
             e.Handled = true;
             MessageBox.Show("Unhandled error in application. Application will be closed.");
