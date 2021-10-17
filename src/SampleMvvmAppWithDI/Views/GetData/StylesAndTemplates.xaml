@@ -1,0 +1,18 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dto="clr-namespace:SampleMvvmAppWithDI.DTOs">
+    <DataTemplate
+        x:Key="SampleEntityTemplate"
+        DataType="{x:Type dto:SampleEntityDto}">
+        <StackPanel>
+            <TextBlock
+                FontSize="12"
+                FontWeight="SemiBold"
+                Text="{Binding Name}" />
+            <TextBlock
+                FontSize="8"
+                Text="{Binding Id}" />
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>
