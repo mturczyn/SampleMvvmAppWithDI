@@ -19,11 +19,13 @@ namespace SampleMvvmAppWithDI.ViewModels.GetData
 
         public ObservableCollection<SampleEntityDto> SampleEntities { get; } = new ObservableCollection<SampleEntityDto>();
 
-        public ICommand GetSampleDataCommand => Command(GetSampleData);
+        public ICommand GetSampleDataCommand => GetCommand(GetSampleData);
 
         private async Task GetSampleData()
         {
             var response = await _mediator.Send(new GetSampleDataQuery.Request());
+
+            SampleEntities.Clear();
 
             foreach (var dto in response.Results)
             {

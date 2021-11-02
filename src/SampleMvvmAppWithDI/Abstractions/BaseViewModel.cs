@@ -18,7 +18,7 @@ namespace SampleMvvmAppWithDI.Abstractions
 
         #region Command get and set for view models
 
-        protected ICommand Command(Action execute, [CallerMemberName] string propertyName = "")
+        protected ICommand GetCommand(Action execute, [CallerMemberName] string propertyName = "")
         {
             if (_commands.ContainsKey(propertyName))
             {
@@ -29,7 +29,7 @@ namespace SampleMvvmAppWithDI.Abstractions
             return command;
         }
 
-        protected ICommand Command<T>(Action<T> execute, [CallerMemberName] string propertyName = "")
+        protected ICommand GetCommand<T>(Action<T> execute, [CallerMemberName] string propertyName = "")
         {
             if (_commands.ContainsKey(propertyName))
             {
@@ -40,7 +40,7 @@ namespace SampleMvvmAppWithDI.Abstractions
             return command;
         }
 
-        protected ICommand Command(Func<Task> execute, [CallerMemberName] string propertyName = "")
+        protected ICommand GetCommand(Func<Task> execute, [CallerMemberName] string propertyName = "")
         {
             if (_commands.ContainsKey(propertyName))
             {
@@ -51,7 +51,7 @@ namespace SampleMvvmAppWithDI.Abstractions
             return command;
         }
 
-        protected ICommand Command<T>(Func<T, Task> execute, [CallerMemberName] string propertyName = "")
+        protected ICommand GetCommand<T>(Func<T, Task> execute, [CallerMemberName] string propertyName = "")
         {
             if (_commands.ContainsKey(propertyName))
             {

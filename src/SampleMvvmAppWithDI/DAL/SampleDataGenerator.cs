@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SampleMvvmAppWithDI.DAL
 {
     public class SampleDataGenerator : ISampleDataProvider
     {
-        public Task<List<SampleEntity>> GetSampleData()
+        public Task<List<SampleEntity>> GetSampleDataAsync(CancellationToken cancellationToken)
         {
             var count = new Random().Next(5, 15);
 
